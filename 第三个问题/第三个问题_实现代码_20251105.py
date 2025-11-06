@@ -21,9 +21,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy.optimize import curve_fit, minimize
 from scipy.integrate import odeint
-from statsmodels.tsa.ar
-
-ima.model import ARIMA
+from statsmodels.tsa.arima.model import ARIMA
 
 warnings.filterwarnings('ignore')
 
@@ -580,8 +578,8 @@ class Visualizer:
             ax.fill_between(forecast_years, lower, upper,
                             alpha=0.2, color='#E74C3C', label='95%置信区间')
 
-        ax.axvline(x=historical_years[-1], color='gray',
-                   linestyle=':', linewidth=2, label='预测起点')
+        ax.axvline(x=historical_years.iloc[-1] if hasattr(historical_years, 'iloc') else historical_years[-1],
+                   color='gray', linestyle=':', linewidth=2, label='预测起点')
 
         ax.set_xlabel('年份', fontsize=13, fontweight='bold')
         ax.set_ylabel('市值（亿美元）', fontsize=13, fontweight='bold')

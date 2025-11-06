@@ -718,7 +718,7 @@ def main():
         print(f"    预期收益率: {performance['return']:.2f}%")
         print(f"    波动率: {performance['volatility']:.2f}%")
         print(f"    流动性评分: {performance['liquidity']:.3f}")
-        print(f"    夏普比率: {performance['sharpe']:.3f}\n")
+        print(f"    夏普比率: {performance['sharpe_ratio']:.3f}\n")
 
     # ========== 第四步：输出详细配置方案 ==========
     print("【步骤4】生成详细配置方案表...\n")
